@@ -40,3 +40,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Docker image
+        run: docker push ghcr.io/morthanax/task-manager:${{ github.sha }}
